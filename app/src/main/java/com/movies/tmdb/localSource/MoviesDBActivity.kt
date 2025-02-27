@@ -30,6 +30,7 @@ class MoviesDBActivity : AppCompatActivity(), MoviesDBAdapter.OnMovieClickListen
         setContentView(R.layout.activity_movies)
 
 topLayout.visibility=View.GONE
+searchView.visibility=View.GONE
         movieRecyclerView.layoutManager =
             GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
 

@@ -15,22 +15,35 @@
         android:layout_height="wrap_content"
         android:id="@+id/poster"
         android:contentDescription="@string/movie_poster"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_launcher_background"/>
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@id/poster"
+    app:layout_constraintTop_toBottomOf="@id/poster">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/movieName"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="@id/poster"
-        app:layout_constraintTop_toBottomOf="@id/poster"
         tools:text="movie Name"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/fav"
+        android:contentDescription="@string/movie_poster"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_fav"
+        android:layout_centerVertical="true"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -41,10 +54,9 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:paddingBottom="10dp"
-        app:layout_constraintStart_toStartOf="@id/movieName"
-        app:layout_constraintTop_toBottomOf="@id/movieName"
+        android:layout_below="@+id/movieName"
         tools:text="2018"/>
-
+</RelativeLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,6 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movieYear"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

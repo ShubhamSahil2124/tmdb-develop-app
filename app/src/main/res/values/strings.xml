@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TMDB</string>
     <string name="movies">Movies</string>
+    <string name="fav_movies">Favourite Movies</string>
     <string name="movie_poster">Movie Poster</string>
     <string name="overview">Overview:</string>
     <string name="tagLine">Tagline:</string>

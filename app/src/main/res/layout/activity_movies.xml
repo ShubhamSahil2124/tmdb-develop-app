@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MoviesActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
     android:background="@color/moviesBackground">
 
-    <Button
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="@string/popular"
-        android:layout_marginBottom="8dp"
-        android:id="@+id/popular_tab"
-        android:background="@color/colorSurfaceDark"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/top_Rated_tab"
+        android:gravity="center">
+
+    <!-- ToolBar widget -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/movies"
+        app:titleTextColor="#ffff" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="9dp"
+        app:srcCompat="@mipmap/ic_fav"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
         />
-    <Button
-        android:layout_width="0dp"
+    </RelativeLayout>
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_below="@+id/topLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="@string/top_rated"
-        android:layout_marginBottom="8dp"
-        android:id="@+id/top_Rated_tab"
-        android:background="@color/colorSurfaceDark"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/popular_tab"
-        app:layout_constraintEnd_toStartOf="@id/Now_Playing_tab"
         />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="@string/now_playing"
-        android:layout_marginBottom="8dp"
-        android:id="@+id/Now_Playing_tab"
-        android:background="@color/colorSurfaceDark"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/top_Rated_tab"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:id="@+id/movieRecyclerView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_Rated_tab"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_list_movies_content"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

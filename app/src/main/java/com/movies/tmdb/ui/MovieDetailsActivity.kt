@@ -9,9 +9,9 @@ import com.movies.tmdb.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_movie_details.*
 
-class MovieDetailsActivity : AppCompatActivity() {
+open class MovieDetailsActivity : AppCompatActivity() {
 
-    private lateinit var movieViewModel : MovieDetailsViewModel
+    private lateinit var movieViewModel: MovieDetailsViewModel
     lateinit var movieId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {

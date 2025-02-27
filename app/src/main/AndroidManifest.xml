@@ -12,28 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.movies.tmdb.ui.SplashScreenActivity"
-                    android:theme="@style/SplashScreenTheme">
+        <activity
+            android:name="com.movies.tmdb.ui.SplashScreenActivity"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.movies.tmdb.ui.TvDetailsActivity" />
-        <activity
-            android:name="com.movies.tmdb.ui.TvShowActivity"
-            android:label="@string/tv_show" />
+
         <activity
             android:name="com.movies.tmdb.ui.MovieDetailsActivity"
             android:label="@string/Movie_Detail" />
         <activity
             android:name="com.movies.tmdb.ui.MoviesActivity"
-            android:label="@string/movies" />
-
+            android:label="@string/movies"
+            android:theme="@style/SplashScreenTheme"/>
         <activity
-            android:name="com.movies.tmdb.ui.MainActivity"
-            android:label="@string/app_name"/>
+            android:name=".localSource.MoviesDBActivity"
+            android:label="@string/fav_movies" />
+
     </application>
 
 </manifest>

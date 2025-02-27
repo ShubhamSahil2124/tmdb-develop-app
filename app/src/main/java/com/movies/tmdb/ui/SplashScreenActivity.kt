@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
                     sleep(AppConstants.SPLASH_TIMED_OUT)
 
                     finish()
-                    val intent = Intent(baseContext,MainActivity::class.java)
+                    val intent = Intent(baseContext,MoviesActivity::class.java)
                     startActivity(intent)
 
                 }catch (e : Exception){
